@@ -22,4 +22,6 @@ const formatoHora = (hora)=>{
     return hora;    
 }
 
-setInterval(mostrarReloj, 1000);
+setTimeout(()=>{
+    setInterval(mostrarReloj, 1000);
+},1500)

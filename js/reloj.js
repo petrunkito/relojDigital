@@ -17,14 +17,14 @@ const mostrarReloj = () => {
 
 
 }
-let reloj = document.getElementById("reloj")
-reloj.addEventListener('click', e => {
+let contenedor = document.getElementById("contenedor")
+contenedor.addEventListener('click', e => {
     let segundos = 3
-    reloj.style.animation = `rotate ${segundos}s infinite`
-    reloj.style.color = "orangered"
+    contenedor.style.animation = `rotate ${segundos}s infinite`
+    contenedor.style.color = "orangered"
     setTimeout(() => {
-        reloj.style.animation = ""
-        reloj.style.color = ""
+        contenedor.style.animation = ""
+        contenedor.style.color = ""
 
     }, segundos * 1000);
 })

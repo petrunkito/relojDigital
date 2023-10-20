@@ -1,11 +1,11 @@
-const mostrarReloj = ()=>{
+const mostrarReloj = () => {
     let fecha = new Date();
     let hr = formatoHora(fecha.getHours());
     let min = formatoHora(fecha.getMinutes());
     let seg = formatoHora(fecha.getSeconds());
     document.getElementById('hora').innerHTML = `${hr}:${min}:${seg}`;
 
-    const meses = ['Ene', 'Feb', 'Mar','Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+    const meses = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
     const dias = ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'];
     let diaSemana = dias[fecha.getDay()];
     let dia = fecha.getDate();
@@ -14,14 +14,27 @@ const mostrarReloj = ()=>{
     document.getElementById('fecha').innerHTML = fechaTexto;
 
     document.getElementById('contenedor').classList.toggle('animar');
-}
 
-const formatoHora = (hora)=>{
-    if(hora < 10)
+
+}
+let reloj = document.getElementById("reloj")
+reloj.addEventListener('click', e => {
+    let segundos = 3
+    reloj.style.animation = `rotate ${segundos}s infinite`
+    reloj.style.color = "orangered"
+    setTimeout(() => {
+        reloj.style.animation = ""
+        reloj.style.color = ""
+
+    }, segundos * 1000);
+})
+
+const formatoHora = (hora) => {
+    if (hora < 10)
         hora = '0' + hora;
-    return hora;    
+    return hora;
 }
 
-setTimeout(()=>{
+setTimeout(() => {
     setInterval(mostrarReloj, 1000);
-},1500)
+}, 1500)

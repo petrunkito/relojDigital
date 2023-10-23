@@ -50,3 +50,7 @@ html {
     margin: 0 auto;
     width: 400px;
 }
+
+#video{
+    border: 3px double blue
+}

@@ -1,0 +1,1 @@
+export default  {rutaVideo: "videos/bad.mp4"}
